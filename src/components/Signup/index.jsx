@@ -4,27 +4,36 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Link from '@mui/material/Link';
 import { useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword,  } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import {
+    auth,
+    registerWithEmailAndPassword,
+  } from "../../firebase";
 
-
-
-function Login() {
-  const [user, loading, error] = useAuthState(auth);
-
+function Signup() {
   let navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  useEffect(()=>{
-    if(!loading){
-      if(user){
-        navigate("/")
-      }
-    }
-  },[loading, navigate, user])
+  useEffect(()=> {
+  if(user) {
+      navigate("/questionnaire")}
+  },[navigate, user])
   const handleSubmit = (e) => {
     e.preventDefault();
-    logInWithEmailAndPassword(email,password)
+    registerWithEmailAndPassword( email, password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     const user = userCredential.user;
+//     //localStorage.setItem('user', user)
+//      console.log(user)
+//     // ...
+//   })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
   };
   const handleEmailChange = (event) => {
       setEmail(event.target.value);
@@ -32,6 +41,7 @@ function Login() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
 }
+
   return (
     <>
       <div>
@@ -48,18 +58,13 @@ function Login() {
         {/* <TextField error id="email" label="Email Address" variant="outlined" helperText="Must be a UCLA email address"/> */}
         <TextField id="email" label="Email Address" variant="outlined" onChange={handleEmailChange} value = {email} />
         <TextField id="password" label="Password" variant="outlined" type="password" onChange={handlePasswordChange} value = {password} />
-        <Button variant="contained" onClick={handleSubmit}>Sign In</Button>
+        <Button variant="contained" onClick={handleSubmit}>Sign Up</Button>
       </Box>
       <Box>
-      <Link href="reset">
-        <h3>Forgot Password?</h3>
-        </Link>
-      </Box>
-      <Box>
-        <h3>Dont have an account?</h3> <Link href="signup">Sign Up</Link>
+        <h3>Have an account?</h3> <Link href="login">Sign In</Link>
       </Box>
       
     </>
   );
 }
-export default Login;
+export default Signup;

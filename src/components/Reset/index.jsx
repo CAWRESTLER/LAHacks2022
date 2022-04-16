@@ -4,17 +4,16 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Link from '@mui/material/Link';
 import { useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword,  } from "../../firebase";
+import { auth, sendPasswordReset,  } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
 
-function Login() {
+function Reset() {
   const [user, loading, error] = useAuthState(auth);
 
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   useEffect(()=>{
     if(!loading){
       if(user){
@@ -24,14 +23,12 @@ function Login() {
   },[loading, navigate, user])
   const handleSubmit = (e) => {
     e.preventDefault();
-    logInWithEmailAndPassword(email,password)
+    sendPasswordReset(email)
   };
   const handleEmailChange = (event) => {
       setEmail(event.target.value);
   }
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-}
+  
   return (
     <>
       <div>
@@ -46,13 +43,13 @@ function Login() {
         autoComplete="off"
       >
         {/* <TextField error id="email" label="Email Address" variant="outlined" helperText="Must be a UCLA email address"/> */}
+        <h3>Send reset email</h3>
         <TextField id="email" label="Email Address" variant="outlined" onChange={handleEmailChange} value = {email} />
-        <TextField id="password" label="Password" variant="outlined" type="password" onChange={handlePasswordChange} value = {password} />
-        <Button variant="contained" onClick={handleSubmit}>Sign In</Button>
+        <Button variant="contained" onClick={handleSubmit}>Reset</Button>
       </Box>
       <Box>
-      <Link href="reset">
-        <h3>Forgot Password?</h3>
+      <Link href="login">
+        <h3>Sign In?</h3>
         </Link>
       </Box>
       <Box>
@@ -62,4 +59,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default Reset;
