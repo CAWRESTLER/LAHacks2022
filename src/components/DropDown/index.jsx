@@ -9,6 +9,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
+import Edit from '@mui/icons-material/Edit';
+
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
@@ -76,15 +78,13 @@ export default function AccountMenu() {
         <MenuItem>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem>
-          <Avatar /> My account
-        </MenuItem>
+        
         <Divider />
         <MenuItem>
           <ListItemIcon>
-            <PersonAdd fontSize="small" />
+            <Edit fontSize="small" />
           </ListItemIcon>
-          Add another account
+          Edit
         </MenuItem>
         <MenuItem>
           <ListItemIcon>

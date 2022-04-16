@@ -8,6 +8,8 @@ function Main(){
     
 
         <div>   
+        <Headerj />
+
             <Button variant="contained" onClick={logout}>Sign Out</Button>
         </div>
         <div>

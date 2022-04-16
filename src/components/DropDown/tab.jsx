@@ -4,14 +4,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MenuIcon from '@mui/icons-material/Menu';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
-const options = [
-  'Home',
-  'Match',
-  'Groups',
-  'Calendar',
-  
-];
 
 const ITEM_HEIGHT = 48;
 
@@ -52,11 +46,40 @@ export default function LongMenu() {
           },
         }}
       >
-        {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
+       
+          <MenuItem onClick={handleClose}>
+             <Link
+          to="/"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          Home
+        </Link>
           </MenuItem>
-        ))}
+          <MenuItem onClick={handleClose}>
+             <Link
+          to="/"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          Match
+        </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+             <Link
+          to="/"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          Groups
+        </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+             <Link
+          to="/"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          Calander
+        </Link>
+          </MenuItem>
+      
       </Menu>
     </div>
   );
