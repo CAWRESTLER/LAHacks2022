@@ -9,6 +9,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import Main from './components/Main';
 import Login from './components/Login';
+import Headerj from './components/Header ';
 
 firebase.initializeApp({
   apiKey: "AIzaSyC5k38-_RGYp5Yo2kDebBxidGOTp2MooAQ",
@@ -27,6 +28,7 @@ function App() {
   console.log(user);
   return (
     <div className="App">
+      <Headerj />
       {user ? <Main /> : <Login />}
     </div>
   );
