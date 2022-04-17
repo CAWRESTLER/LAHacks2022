@@ -1,7 +1,6 @@
 
 import ProfileCard from '../Cards';
 import MatchCard from '../Cards/MatchCard';
-import Headerj from '../Header ';
 
 const divStyle = {
     color: 'blue',
@@ -33,9 +32,7 @@ const divStyle = {
 function Match(){
     return(
         <>
-        <div>   
-        <Headerj />
-        </div>
+      
         
         <div>
             <h1 style = {title}>

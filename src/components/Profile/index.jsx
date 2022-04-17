@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import { logout } from "../../firebase";
 
-import Headerj from '../Header ';
+
 import PersonalProfileCard from '../Cards/ProfileCard';
 
 
@@ -19,9 +19,7 @@ const logOut = {
 function Profile(){
     return(
         <>
-        <div>   
-        <Headerj />
-        </div>
+       
       <div style = {divStyle}>
           <PersonalProfileCard />
       </div>
