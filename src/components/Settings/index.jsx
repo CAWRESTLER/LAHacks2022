@@ -4,11 +4,8 @@ import Headerj from '../Header';
 function Settings(){
     return(
         <>
-    
-
         <div>   
         <Headerj />
-
         </div>
         <div>
 
