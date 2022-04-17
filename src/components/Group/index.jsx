@@ -1,5 +1,5 @@
 
-import Headerj from '../Header ';
+import Headerj from '../Header';
 
 function Group(){
     return(

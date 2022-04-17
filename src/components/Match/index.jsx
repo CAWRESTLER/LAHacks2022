@@ -1,8 +1,7 @@
 
-import Headerj from '../Header ';
 import ProfileCard from '../Cards';
-import MatchList from '../Lists';
 import MatchCard from '../Cards/MatchCard';
+import Headerj from '../Header ';
 
 const divStyle = {
     color: 'blue',

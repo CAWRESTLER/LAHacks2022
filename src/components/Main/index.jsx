@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import { logout } from "../../firebase";
-import Headerj from '../Header ';
+import Headerj from '../Header';
 
 function Main(){
     return(
