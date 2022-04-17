@@ -10,11 +10,14 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Edit from '@mui/icons-material/Edit';
+import {useNavigate} from "react-router-dom";
 
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
 export default function AccountMenu() {
+    const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -75,24 +78,24 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem>
+        <MenuItem onClick = {()=> navigate('/Profile')}>
           <Avatar /> Profile
         </MenuItem>
         
         <Divider />
-        <MenuItem>
+        <MenuItem onClick = {()=> navigate('/ProfileEdit')}>
           <ListItemIcon>
             <Edit fontSize="small" />
           </ListItemIcon>
           Edit
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick = {()=> navigate('/Settings')}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick = {()=> navigate('/Profile')}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

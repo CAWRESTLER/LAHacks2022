@@ -57,7 +57,7 @@ export default function LongMenu() {
           </MenuItem>
           <MenuItem onClick={handleClose}>
              <Link
-          to="/"
+          to="/Match"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
           Match
@@ -65,7 +65,7 @@ export default function LongMenu() {
           </MenuItem>
           <MenuItem onClick={handleClose}>
              <Link
-          to="/"
+          to="/Group"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
           Groups
@@ -73,10 +73,18 @@ export default function LongMenu() {
           </MenuItem>
           <MenuItem onClick={handleClose}>
              <Link
-          to="/"
+          to="/Calendar"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Calander
+          Calendar
+        </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+             <Link
+          to="/Message"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          Message
         </Link>
           </MenuItem>
       

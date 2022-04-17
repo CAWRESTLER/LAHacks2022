@@ -15,6 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import {useNavigate} from "react-router-dom";
 
 import AccountMenu from '../DropDown';
 import MenuListComposition from '../DropDown/tab';
@@ -60,6 +61,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Headerj() {
+const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -83,6 +86,12 @@ export default function Headerj() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+   const handleMessage = () => {
+    navigate("/");
+  };
+ 
+
+  
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -122,14 +131,20 @@ export default function Headerj() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+   <div onClick = {()=> navigate('/Profile')}>
+       <MenuItem  >
+        <IconButton  size="large" aria-label="show 4 new mails" color="inherit" >
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
       </MenuItem>
+       
+       </div>     
+               
+       
+   
       <MenuItem>
         <IconButton
           size="large"
@@ -142,18 +157,7 @@ export default function Headerj() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+     
     </Menu>
   );
 
