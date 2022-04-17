@@ -15,6 +15,9 @@ function Main(){
         <div>
 
             This is the main page
+            
+             Go to Dogegram! Our Partner site to make your social experience with the world even more smooth!
+            <a href="https://app.dogegram.xyz/">Dogegram</a>
         </div>
         </>
     )
