@@ -6,6 +6,7 @@ import Link from '@mui/material/Link';
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../../firebase";
+import Headerj from '../Header';
 
 
 function Questionnaire() {
@@ -23,6 +24,7 @@ function Questionnaire() {
   return (
     <>
       <div>
+      {!user ? "can't be here" : <Headerj />}
         <h1>Its the Questtionairre</h1>
       </div>
       
